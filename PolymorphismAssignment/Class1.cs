@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 // Define the IQuittable interface with a Quit method
 public interface IQuittable
@@ -12,25 +12,16 @@ public class Employee : IQuittable
     public string FirstName { get; set; }
     public string LastName { get; set; }
 
-    // Constructor to initialize the employee with a first and last name
+    // Constructor that sets the employee's name
     public Employee(string firstName, string lastName)
     {
         FirstName = firstName;
         LastName = lastName;
     }
 
-    // Implement the Quit method from the IQuittable interface
-    public void Quit() => Console.WriteLine($"{FirstName} {LastName} has quit the job");
-}
-
-class Program
-{
-    static void Main()
+    // Implements the Quit method from the IQuittable interface
+    public void Quit()
     {
-        // Create an Employee object and call the Quit method
-        new Employee("John", "Doe").Quit();
-
-        // Keep the console window open
-        Console.ReadLine();
+        Console.WriteLine($"Employee {FirstName} {LastName} has quit the job.");
     }
 }
